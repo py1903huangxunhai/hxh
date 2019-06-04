@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+# 需要将创建的应用注册
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'booktest',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,8 @@ WSGI_APPLICATION = 'demo1.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+#DJango默认
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5312b894-871b-450e-8a45-7ecf9519dc39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,18 +86,6 @@
             <path>
               <item name="hxh" type="b2602c69:ProjectViewProjectNode" />
               <item name="hxh" type="462c0819:PsiDirectoryNode" />
-              <item name="demo1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hxh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hxh" type="462c0819:PsiDirectoryNode" />
-              <item name="demo1" type="462c0819:PsiDirectoryNode" />
-              <item name="booktest" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hxh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hxh" type="462c0819:PsiDirectoryNode" />
-              <item name="demo1" type="462c0819:PsiDirectoryNode" />
               <item name="demo1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -223,12 +210,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559652325831</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="应用demo1 &#10;添加db.sqlite3 时间：0604八点四十">
+      <created>1559698511190</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1559698511190</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="671" y="6" width="688" height="701" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34360555" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -240,7 +233,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.5239787" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.5239787" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.4742451" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -294,7 +287,9 @@
     <MESSAGE value="task1" />
     <MESSAGE value="django0604 xia14:30" />
     <MESSAGE value="项目demo1 应用booktest、demo1、manage。时间：0604八点四十" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目demo1 应用booktest、demo1、manage。时间：0604八点四十" />
+    <MESSAGE value="应用demo1 &#10;添加db.sqlite3 时间：0604八点四十" />
+    <MESSAGE value="应用demo1 &#10;添加db.sqlite3 时间：0605 09:35" />
+    <option name="LAST_COMMIT_MESSAGE" value="应用demo1 &#10;添加db.sqlite3 时间：0605 09:35" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../../py1903/GITDemo/hello.py" />

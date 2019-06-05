@@ -19,7 +19,12 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
+# from django.http import HttpResponse
+
+from django.conf.urls import url,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # 在项目路由下方添加
+    url('booktest/', include('booktest.urls')),
 ]

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人物详情首页</title>
+</head>
+<body>
+<!--    <h2>详情首页</h2>-->
+
+    <h2>书名详情</h2>
+    {{book}}
+    <h3>英雄人物</h3>
+    <ul>
+        {%for i in book.heroinfo_set.all%}
+        <li>{{i.name}} ---> {{i.content}}</li>
+        {%endfor%}
+    </ul>
+    <br>
+    <a href="/booktest/list/">点击返回书名列表</a>
+
+</body>
+</html>

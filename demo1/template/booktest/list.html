@@ -11,10 +11,10 @@
     <div class="container">
         <h2>书名列表</h2>
         <ul>
-            {%for a in book%}
+            {%for book in book%}
 
     <!--        <li><a href="/detail/{{a.id}}/">{{a.title}}</a></li>-->
-                <li><a href="{% url 'booktest:detail' a.id %}">{{forloop.counter}}&nbsp{{a.title}}</a></li>
+                <li><a href="{% url 'booktest:detail' book.id %}">{{forloop.counter}}&nbsp{{book.title}}</a></li>
             {%endfor%}
         </ul>
         <br>

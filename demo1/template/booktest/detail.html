@@ -14,12 +14,12 @@
         <h3>英雄人物</h3>
         <ul>
             {% if book %}
-                {% for i in book.heroinfo_set.all %}
+                {% for hero in book.heroinfo_set.all %}
 <!--                    {% if forloop.counter == 1 %}-->
-                    <li style="background-color:red">{{forloop.counter}}&nbsp&nbsp{{i.name}} ---> {{i.content}} <a
-                                href="#">删除</a></li>
+                    <li style="background-color:red">{{forloop.counter}}&nbsp&nbsp{{hero.name}} ---> {{hero.content}} <a
+                                href="{% url 'booktest:deletehero' hero.id%}">删除</a></li>
 <!--                    {% else %}-->
-                    <li>{{forloop.counter}}&nbsp&nbsp{{ i.name }}--->{{ i.content }}</li>
+                    <li>{{forloop.counter}}&nbsp&nbsp{{ hero.name }}--->{{ hero.content }} <a href="{% url 'booktest:deletehero' hero.id %}">删除</a></li>
 <!--                    {% endif %}-->
                 {% empty %}
                     没有英雄信息
@@ -31,6 +31,7 @@
         <br>
     <!--    <a href="/list/">点击返回书名列表</a>-->
         <a href="{% url 'booktest:list' %}">点击返回书名列表</a>
+        <h3><a href="{% url 'booktest:addhero' book.id %}">添加英雄</a></h3>
     </div>
 
 </body>

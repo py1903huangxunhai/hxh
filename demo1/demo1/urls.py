@@ -25,6 +25,6 @@ from django.conf.urls import url,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 在项目路由下方添加
-    url('booktest/', include('booktest.urls')),
+    # 在项目路由下方添加应用路由配置文件
+    url('', include('booktest.urls',namespace='booktest')),
 ]

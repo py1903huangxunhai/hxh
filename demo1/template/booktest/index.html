@@ -3,15 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>index首页</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/main.js"></script>
+
 </head>
 <body>
-    <h2>首页</h2>
-    <h3>用户</h3>
-    {{username}}
-    <h3>年龄</h3>
-    {{age}}
-    <br>
-    <br>
-    <a href="/booktest/list/">点击进入书名列表</a>
+    <div class="container">
+        <h2>首页</h2>
+        <h3>用户</h3>
+        {{ username }}
+        <h3>密码</h3>
+        {{ password }}
+        <br>
+        <br>
+    <!--    <a href="/list/">点击进入书名列表</a>-->
+        <a href="{% url 'booktest:list' %}">点击进入书名列表</a>
+        <div class="ads">
+            <img src="/static/img/ads/hot3.jpg" alt="">
+        </div>
+    </div>
 </body>
 </html>

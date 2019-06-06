@@ -3,20 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>人物详情首页</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/main.js"></script>
 </head>
 <body>
-<!--    <h2>详情首页</h2>-->
 
-    <h2>书名详情</h2>
-    {{book}}
-    <h3>英雄人物</h3>
-    <ul>
-        {%for i in book.heroinfo_set.all%}
-        <li>{{i.name}} ---> {{i.content}}</li>
-        {%endfor%}
-    </ul>
-    <br>
-    <a href="/booktest/list/">点击返回书名列表</a>
+    <div class="container">
+        <h2>书名详情</h2>
+        {{book}}
+        <h3>英雄人物</h3>
+        <ul>
+            {% if book %}
+                {% for i in book.heroinfo_set.all %}
+<!--                    {% if forloop.counter == 1 %}-->
+                    <li style="background-color:red">{{forloop.counter}}&nbsp&nbsp{{i.name}} ---> {{i.content}} <a
+                                href="#">删除</a></li>
+<!--                    {% else %}-->
+                    <li>{{forloop.counter}}&nbsp&nbsp{{ i.name }}--->{{ i.content }}</li>
+<!--                    {% endif %}-->
+                {% empty %}
+                    没有英雄信息
+                {% endfor %}
+            {% else %}
+                没有书本信息
+            {% endif %}
+        </ul>
+        <br>
+    <!--    <a href="/list/">点击返回书名列表</a>-->
+        <a href="{% url 'booktest:list' %}">点击返回书名列表</a>
+    </div>
 
 </body>
 </html>

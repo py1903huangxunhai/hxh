@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>书名列表首页</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/main.js"></script>
 </head>
 <body>
-<!--    <h2>列表首页</h2>-->
 
-    <h2>书名列表</h2>
-    <ui>
-        {%for a in book%}
+    <div class="container">
+        <h2>书名列表</h2>
+        <ul>
+            {%for a in book%}
 
-        <li><a href="/booktest/detail/{{a.id}}/">{{a}}</a></li>
-        {%endfor%}
-    </ui>
-    <br>
-    <a href="/booktest/index/">点击返回首页</a>
+    <!--        <li><a href="/detail/{{a.id}}/">{{a.title}}</a></li>-->
+                <li><a href="{% url 'booktest:detail' a.id %}">{{forloop.counter}}&nbsp{{a.title}}</a></li>
+            {%endfor%}
+        </ul>
+        <br>
+    <!--    <a href="/">点击返回首页</a>-->
+        <a href="{% url 'booktest:index' %}">点击返回首页</a>
+
+    </div>
 
 </body>
 </html>

@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import index,list,detail,deletehero,addhero
+from .views import index,list,detail,deletehero,deletebook,addhero,addbook
 app_name = 'booktest'
 
 urlpatterns = [
@@ -12,7 +12,11 @@ urlpatterns = [
 
     # 角色相关
     url(r'^deletehero/(\d+)/$',deletehero,name="deletehero"),
-
     #添加英雄
-    url(r'^addhero/(\d+)/$',addhero,name='addhero')
+    url(r'^addhero/(\d+)/$',addhero,name='addhero'),
+
+    #书籍相关
+    url(r'^deletebook/(\d+)/$',deletebook,name="deletebook"),
+    #添加书籍
+    url(r'^addbook/$',addbook,name='addbook')
 ]

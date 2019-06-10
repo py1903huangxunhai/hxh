@@ -46,11 +46,13 @@ def detail(req,id):
 def deletehero(req,id):
     hero = HeroInfo.objects.get(pk=id)
     hero.delete()
-
-
     return HttpResponseRedirect("/detail/%s/" % (hero.book.id,))
     # return HttpResponse("删除了%s" % (id,))
 
+def deletebook(req):
+    book = BookInfo.objects.get(pk=id)
+    book.delete()
+    return HttpResponseRedirect("/detail/")
 
 #添加英雄函数
 def addhero(req,id):
@@ -64,3 +66,15 @@ def addhero(req,id):
         hero.book=book
         hero.save()
         return HttpResponseRedirect('/detail/%s/'%(id,))
+        # return
+
+#添加书籍函数
+def addbook(req):
+    if req.method == 'GET':
+        return render(req, 'booktest/addbook.html')
+    elif req.method == 'POST':
+        book = BookInfo()
+        book.title = req.POST.get('booktitle')
+        book.pub_date = req.POST.get('bookdate')
+        book.save()
+        return HttpResponseRedirect('/list/')

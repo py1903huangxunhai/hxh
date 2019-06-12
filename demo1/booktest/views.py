@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect,reverse
 from django.http import HttpResponse,HttpResponseRedirect
 from .models import BookInfo,HeroInfo
 from django.template import loader
@@ -46,13 +46,15 @@ def detail(req,id):
 def deletehero(req,id):
     hero = HeroInfo.objects.get(pk=id)
     hero.delete()
-    return HttpResponseRedirect("/detail/%s/" % (hero.book.id,))
+    # return HttpResponseRedirect("/detail/%s/" % (hero.book.id,))
+    return redirect(reverse('booktest:detail', args=(hero.book.id,)))
     # return HttpResponse("删除了%s" % (id,))
 
 def deletebook(req):
     book = BookInfo.objects.get(pk=id)
     book.delete()
-    return HttpResponseRedirect("/detail/")
+    # return HttpResponseRedirect("/detail/")
+    return redirect(reverse('booktest:list'))
 
 #添加英雄函数
 def addhero(req,id):
@@ -65,8 +67,8 @@ def addhero(req,id):
         hero.content=req.POST.get('herocontent')
         hero.book=book
         hero.save()
-        return HttpResponseRedirect('/detail/%s/'%(id,))
-        # return
+        # return HttpResponseRedirect('/detail/%s/'%(id,))
+        return redirect(reverse('booktest:detail', args=(id,)))
 
 #添加书籍函数
 def addbook(req):
@@ -77,4 +79,5 @@ def addbook(req):
         book.title = req.POST.get('booktitle')
         book.pub_date = req.POST.get('bookdate')
         book.save()
-        return HttpResponseRedirect('/list/')
+        # return HttpResponseRedirect('/list/')
+        return redirect(reverse('booktest:list'))

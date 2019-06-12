@@ -120,15 +120,17 @@ class RegisteView(View):
             username = req.POST.get("username")
             password = req.POST.get("password")
             email = req.POST.get("email")
-
-            user = MyUser.objects.create_user(username=username, email=email, password=password)
+            print(username,password)
+            # return HttpResponse('qqq')
+            user=MyUser.objects.create_user(username=username,email=email,password=password)
+            print(user)
             if user:
                 return redirect(reverse("polls:login"))
 
         except:
             lf = MyUserLoginForm()
             rf = MyUserRegistForm()
-            errormessage ="注册失败"
+            errormessage = "注册失败"
             return render(req, "polls/login_regist.html", locals())
 
 

@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 # Create your models here.
 
 class Tag(models.Model):
@@ -38,3 +39,28 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+
+class Ads(models.Model):
+    """
+    轮播图模型类
+    pic 字段为图片类型 upload_to 图片上传位置，数据中存储图片路径
+    """
+    pic = models.ImageField(upload_to="ads")
+    desc = models.CharField(max_length=20)
+    url = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.desc
+
+
+class MessageInfo(models.Model):
+    """
+    联系我们页面内容
+    """
+    email = models.EmailField()
+    # TextField不具备格式 使用富文本替换
+    # info = models.TextField()
+    info = HTMLField()
+
+    def __str__(self):
+        return self.email

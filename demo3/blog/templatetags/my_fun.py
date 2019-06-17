@@ -4,7 +4,7 @@
 """
 
 from django.template import Library
-from ..models import Article,Category,Tag
+from ..models import Article,Category,Tag,Ads
 register = Library()
 
 @register.simple_tag
@@ -30,3 +30,7 @@ def getcategorys():
 @register.simple_tag
 def gettags():
     return Tag.objects.all()
+
+@register.simple_tag
+def getads():
+    return Ads.objects.all()

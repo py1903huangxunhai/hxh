@@ -9,4 +9,5 @@ urlpatterns = [
     url(r'^login/$',views.LoginView.as_view(), name="login"),
     url(r'^regist/$',views.RegisteView.as_view(),name="regist"),
     url(r'^logout/$',views.LogOutView.as_view(),name="logout"),
+    url(r'^active/(\d+)/$',views.ActiveView.as_view(),name="active"),
 ]

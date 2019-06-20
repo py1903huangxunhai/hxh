@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'comments',
     # 注册 应用 可以找到应用下方文件夹
     'tinymce',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -125,7 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
-
+STATIC_ROOT = os.path.join(BASE_DIR,"staticroot")
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/media')
 
@@ -165,3 +166,18 @@ CACHES = {
         'TIMEOUT': 300,
     },
 }
+
+# 配置搜索信息
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'blog.whoosh_cn_backend.WhooshEngine',
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+}
+
+# 分页设置
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+
+# 索引生成设置
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+

@@ -1,0 +1,112 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+  美食列表
+{% endblock %}
+
+
+{% block one %}
+  <div class="header">
+    <div class="menu-btn">
+      <div class="menu"></div>
+    </div>
+    <h1 class="logo">
+      <a href="{% url 'blog:index' %}">
+        <span>MYBLOG</span>
+        <img src="/static/img/logo.png">
+      </a>
+    </h1>
+    <div class="nav">
+      <a href="{% url 'blog:index' %}" class="active">文章</a>
+      <a href="{% url 'blog:whisper' %}">微语</a>
+      <a href="{% url 'blog:album' %}">相册</a>
+      <a href="{% url 'blog:leacots' %}">留言</a>
+      <a href="{% url 'blog:about' %}">关于</a>
+    </div>
+    <ul class="layui-nav header-down-nav">
+      <li class="layui-nav-item"><a href="{% url 'blog:index' %}" class="active">文章</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:whisper' %}">微语</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:album' %}">相册</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:leacots' %}">留言</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:about' %}">关于</a></li>
+    </ul>
+    <p class="welcome-text">
+      欢迎来到<span class="name">HXH</span>的博客~
+    </p>
+  </div>
+{% endblock %}
+
+
+{% block top %}
+      <div class="banner">
+        <div class="cont w1000">
+          <div class="title">
+            <h3>MY<br />Blog</h3>
+            <h4>well-balanced heart</h4>
+          </div>
+          <div class="amount">
+            <p><span class="text">访问量</span><span class="access">1000</span></p>
+            <p><span class="text">日志</span><span class="daily-record">999</span></p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="tlinks">Collect from <a href="http://www.cssmoban.com/" >网页模板</a></div>
+{% endblock %}
+
+
+
+{% block next %}
+        <div class="content">
+    <div class="cont w1000">
+      <div class="title">
+        <span class="layui-breadcrumb" lay-separator="|">
+          {% for category in categorys %}
+              <a href="{% url 'blog:category' category.id %}">{{category}}</a>
+          {% endfor %}
+        </span>
+      </div>
+      <div class="list-item">
+        {% for article in articles %}
+          <div class="item">
+          <div class="layui-fluid">
+            <div class="layui-row">
+              <div class="layui-col-xs12 layui-col-sm4 layui-col-md5">
+                <div class="img"><img src="/static/img/sy_img1.jpg" alt=""></div>
+              </div>
+              <div class="layui-col-xs12 layui-col-sm8 layui-col-md7">
+                <div class="item-cont">
+                  <h3><a href="{% url 'blog:details' 1 %}">{{ article.title }}</a><button class="layui-btn layui-btn-danger new-icon">new</button></h3>
+                  <h5>{{ article.category }}</h5>
+                  <p>{{ article.body }}</p>
+                  <a href="{% url 'blog:details' 1 %}" class="go-icon"></a>
+                </div>
+            </div>
+            </div>
+           </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+{% comment %}
+  <div id="demo" style="text-align: center;">
+        <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
+          <a href="javascript:;" class="layui-laypage-prev layui-disabled" data-page="0">上一页</a>
+          <span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>1</em></span>
+          <a href="javascript:;" data-page="2">2</a>
+          <a href="javascript:;" data-page="3">3</a>
+          <a href="javascript:;" data-page="4">4</a>
+          <a href="javascript:;" data-page="5">5</a>
+          <span class="layui-laypage-spr">…</span>
+          <a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="7">7</a>
+          <a href="javascript:;" class="layui-laypage-next" data-page="2">下一页</a>
+        </div>
+  </div>
+{% endcomment %}
+
+
+    </div>
+  </div>
+{% endblock %}

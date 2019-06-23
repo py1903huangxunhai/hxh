@@ -1,0 +1,115 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+  关于详情
+{% endblock %}
+
+{% block one %}
+  <div class="header">
+    <div class="menu-btn">
+      <div class="menu"></div>
+    </div>
+    <h1 class="logo">
+      <a href="{% url 'blog:index' %}">
+        <span>MYBLOG</span>
+        <img src="/static/img/logo.png">
+      </a>
+    </h1>
+    <div class="nav">
+      <a href="{% url 'blog:index' %}">文章</a>
+      <a href="{% url 'blog:whisper' %}">微语</a>
+      <a href="{% url 'blog:album' %}">相册</a>
+      <a href="{% url 'blog:leacots' %}">留言</a>
+      <a href="{% url 'blog:about' %}" class="active">关于</a>
+    </div>
+    <ul class="layui-nav header-down-nav">
+      <li class="layui-nav-item"><a href="{% url 'blog:index' %}">文章</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:whisper' %}">微语</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:album' %}">相册</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:leacots' %}">留言</a></li>
+      <li class="layui-nav-item"><a href="{% url 'blog:about' %}" class="active">关于</a></li>
+    </ul>
+    <p class="welcome-text">
+      欢迎来到<span class="name">HXH</span>的博客~
+    </p>
+  </div>
+{% endblock %}
+
+
+{% block next %}
+  <div class="about-content">
+    <div class="w1000">
+      <div class="item info">
+        <div class="title">
+          <h3>我的介绍</h3>
+        </div>
+        <div class="cont">
+          <img src="/static/img/xc_img1.jpg">
+          <div class="per-info">
+            <p>
+              <span class="name">HXH</span><br />
+              <span class="age">22岁</span><br />
+              <span class="Career">爬虫, WEB工程师</span><br />
+              <span class="interest">爱好旅游、看电影、打游戏</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item tool">
+        <div class="title">
+          <h3>我的技能</h3>
+        </div>
+        <div class="layui-fluid">
+          <div class="layui-row">
+            <div class="layui-col-xs6 layui-col-sm3 layui-col-md3">
+              <div class="cont-box">
+                <img src="/static/img/gr_img2.jpg">
+                <p>80%</p>
+              </div>
+            </div>
+            <div class="layui-col-xs6 layui-col-sm3 layui-col-md3">
+              <div class="cont-box">
+                <img src="/static/img/gr_img3.jpg">
+                <p>80%</p>
+              </div>
+            </div>
+            <div class="layui-col-xs6 layui-col-sm3 layui-col-md3">
+              <div class="cont-box">
+                <img src="/static/img/gr_img4.jpg">
+                <p>80%</p>
+              </div>
+            </div>
+            <div class="layui-col-xs6 layui-col-sm3 layui-col-md3">
+              <div class="cont-box">
+                <img src="/static/img/gr_img5.jpg">
+                <p>80%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item contact">
+        <div class="title">
+          <h3>联系方式</h3>
+        </div>
+        <div class="cont">
+          <img src="/static/img/erweima.jpg">
+          <div class="text">
+            <p class="WeChat">微信：<span>hai599954453</span></p>
+            <p class="qq">qq：<span>599954453</span></p>
+            <p class="iphone">电话：<span>15638129798</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    layui.config({
+      base: '../res/js/util/'
+    }).use(['element','laypage','form','layer','menu'],function(){
+      element = layui.element,laypage = layui.laypage,form = layui.form,layer = layui.layer,menu = layui.menu;
+      menu.init();
+    })
+  </script>
+{% endblock %}
